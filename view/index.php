@@ -26,9 +26,10 @@
 	    	delete features[param];
 		}
 		else{
-				$.getJSON('http://localhost:8000/api/'+param, function (data) {
-			  	features[param] = map.data.addGeoJson(data);
-			});
+				$.getJSON('http://'+window.location.hostname+':'+window.location.port+'/api/'+param, 
+					function (data){
+			  			features[param] = map.data.addGeoJson(data);
+				});
 		}
 		
 	}
